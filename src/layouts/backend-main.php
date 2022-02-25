@@ -33,7 +33,7 @@ $languages  = json_decode(Setting::findOne(['name' => 'app::language'])->config,
 <div class="wrap">
 <?php
     NavBar::begin([
-        'brandLabel' => Html::img(Yii::$app->request->baseUrl.'/data/'.strval(Html::encode($settings['page::logo'])),['width' => '30 px']),
+        'brandLabel' => Html::img(Yii::$app->request->baseUrl.'/data/'.strval(Html::encode($settings['page::logo'])),['width' => 'height']),
         'brandUrl' => Yii::$app->homeUrl,
         'options' => [
             'class' => 'navbar-inverse navbar-fixed-top',
@@ -42,12 +42,24 @@ $languages  = json_decode(Setting::findOne(['name' => 'app::language'])->config,
 
     $menuItems [] = ['label' => Module::t('Home'), 'url' => ['/site/home']];
 
-    if(!Yii::$app->user->isGuest)
+    if(!Yii::$app->user->isGuest){
+        $menuItems [] = [
+            'label' => Module::t('Users'),
+            'url' => ['#'],
+            'items' => [
+                ['label' => Module::t('Users'), 'url' => ['/user']],
+                ['label' => Module::t('Groups'), 'url' => ['/user/group']],
+                ['label' => Module::t('Import'), 'url' => ['/user/import']],
+                ['label' => Module::t('Roles'), 'url' => ['/user/auth/role']],
+                ['label' => Module::t('Permissions'), 'url' => ['/user/auth/permission']],
+
+            ]
+        ];
         $menuItems [] = [
             'label' => Module::t('Settings'),
             'url' => ['/site/setting']
         ];
-
+    }
     if (Yii::$app->user->isGuest) {
         $menuItems[] = [
             'label' => Module::t('Login'),
