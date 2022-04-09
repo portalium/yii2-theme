@@ -1,15 +1,17 @@
 <?php
 
-use yii\helpers\ArrayHelper;
-use portalium\theme\helpers\Html;
-use portalium\theme\widgets\Nav;
-use portalium\theme\widgets\NavBar;
-use portalium\theme\widgets\Breadcrumbs;
-use portalium\theme\widgets\Alert;
-use portalium\theme\bundles\AppAsset;
-use portalium\theme\Module;
 use portalium\theme\Theme;
+use portalium\theme\Module;
+use yii\helpers\ArrayHelper;
+use portalium\menu\models\Menu;
+
+use portalium\theme\helpers\Html;
 use portalium\site\models\Setting;
+use portalium\theme\widgets\Alert;
+use portalium\theme\widgets\NavBar;
+use portalium\theme\bundles\AppAsset;
+use portalium\theme\widgets\Breadcrumbs;
+use portalium\menu\widgets\Nav;
 
 Theme::registerAppAsset($this);
 
@@ -43,6 +45,10 @@ $languages  = json_decode(Setting::findOne(['name' => 'app::language'])->config,
     $menuItems [] = ['label' => Module::t('Home'), 'url' => ['/site/home']];
 
     if(!Yii::$app->user->isGuest){
+        $menuItems [] = [
+            'label' => Module::t('Menu'),
+            'url' => ['/menu']
+        ];
         $menuItems [] = [
             'label' => Module::t('Users'),
             'url' => ['#'],
@@ -92,8 +98,7 @@ $languages  = json_decode(Setting::findOne(['name' => 'app::language'])->config,
     ];
 
     echo Nav::widget([
-        'options' => ['class' => 'navbar-nav navbar-right'],
-        'items' => $menuItems,
+        'model' => Menu::find()->limit(1)->one(),
     ]);
 
     NavBar::end();
