@@ -44,12 +44,6 @@ $languages = json_decode(Setting::findOne(['name' => 'app::language'])->config,t
         'label' => Module::t('Home'),
         'url' => ['/site/home']
     ];
-    
-    if($settings['page::about'])
-         $menuItems[] = [
-             'label' => Module::t('About'),
-             'url' => ['/site/home/about']
-         ];
 
     if($settings['page::contact'])
         $menuItems[] =  [
@@ -88,6 +82,7 @@ $languages = json_decode(Setting::findOne(['name' => 'app::language'])->config,t
             'url' => ['/site/home/lang','lang' => $key]
         ];
     }
+    
     $menuItems[] = [
         'label' => Module::t($languages[Yii::$app->language]),
         'url' => ['/site/home/lang','lang' => Yii::$app->language],

@@ -185,7 +185,7 @@ class Panel extends \yii\bootstrap5\Widget {
         if (!empty($this->actions))
         {
             if(isset($this->actions['header'])){
-                echo Html::tag('div', implode("\n", $this->actions['header']), ['class' => 'actions', 'style' => 'float:right;margin-top:-6px;']);
+                echo Html::tag('div', implode("\n", $this->actions['header']), ['class' => 'actions', 'style' => 'float:right;margin-top:-2px;']);
                 unset($this->actions['header']);
             } else if(isset($this->actions['footer'])) {
                 echo Html::tag('div', implode("\n", $this->actions['footer']), ['class' => 'actions', 'style' => 'float:right;margin-top:-2px;']);
