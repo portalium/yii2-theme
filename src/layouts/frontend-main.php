@@ -33,7 +33,7 @@ $languages = json_decode(Setting::findOne(['name' => 'app::language'])->config,t
 <div class="wrap">
 <?php
     NavBar::begin([
-        'brandLabel' => Html::img(Yii::$app->request->baseUrl.'/data/'.strval(Html::encode($settings['page::logo'])),['height' => '30 px']),
+        'brandLabel' => Html::img(Yii::$app->request->baseUrl.'/data/'.strval(json_decode($settings['page::logo'],true)['name'])),['height' => '30 px']),
         'brandUrl' => Yii::$app->homeUrl,
         'options' => [
             'class' => 'navbar-inverse navbar-fixed-top',
@@ -45,20 +45,20 @@ $languages = json_decode(Setting::findOne(['name' => 'app::language'])->config,t
         'url' => ['/site/home']
     ];
 
-    if($settings['page::contact'])
+    if($settings['form::contact'])
         $menuItems[] =  [
             'label' => Module::t('Contact'),
             'url' => ['/site/home/contact']
         ];
 
     if (Yii::$app->user->isGuest) {
-        if($settings['page::signup'])
+        if($settings['form::signup'])
             $menuItems[] = [
                 'label' => Module::t('Sign Up'),
                 'url' => ['/site/auth/signup']
             ];
 
-        if($settings['page::login'])
+        if($settings['form::login'])
             $menuItems[] = [
                 'label' => Module::t('Login'),
                 'url' => ['/site/auth/login']
