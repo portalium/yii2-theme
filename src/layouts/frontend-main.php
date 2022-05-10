@@ -33,7 +33,7 @@ $languages = json_decode(Setting::findOne(['name' => 'app::language'])->config,t
 <div class="wrap">
 <?php
     NavBar::begin([
-        'brandLabel' => Html::img(Yii::$app->request->baseUrl.'/data/'.strval(json_decode($settings['page::logo'],true)['name'])),['height' => '30 px']),
+        'brandLabel' => Html::img(Yii::$app->request->baseUrl.'/data/'.strval(json_decode($settings['page::logo'],true)['name']),['height' => '30 px']),
         'brandUrl' => Yii::$app->homeUrl,
         'options' => [
             'class' => 'navbar-inverse navbar-fixed-top',
