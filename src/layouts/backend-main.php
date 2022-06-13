@@ -35,7 +35,7 @@ $languages  = json_decode(Setting::findOne(['name' => 'app::language'])->config,
 <div class="wrap">
 <?php
     NavBar::begin([
-        'brandLabel' => Html::img(Yii::$app->request->baseUrl.'/data/'.strval(Html::encode($settings['page::logo'])),['height' => '30px']),
+        'brandLabel' => Html::img(Yii::$app->request->baseUrl.'/data/'.strval(Html::encode(json_decode($settings['page::logo'],true)['name'])),['height' => '30px']),
         'brandUrl' => Yii::$app->homeUrl,
         'options' => [
             'class' => 'navbar-inverse navbar-fixed-top',
@@ -98,7 +98,7 @@ $languages  = json_decode(Setting::findOne(['name' => 'app::language'])->config,
     ];
 
     echo Nav::widget([
-        'model' => Menu::find()->limit(1)->one(),
+        'model' => Menu::find()->where(['slug' => 'web-menu'])->one(),
     ]);
 
     NavBar::end();
