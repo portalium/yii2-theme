@@ -3,11 +3,16 @@
 use yii\helpers\ArrayHelper;
 
 use portalium\theme\Theme;
+use portalium\theme\Module;
 use portalium\theme\helpers\Html;
 use portalium\theme\widgets\Alert;
+use portalium\theme\widgets\NavBar;
+use portalium\theme\bundles\AppAsset;
 use portalium\theme\widgets\Breadcrumbs;
+use portalium\site\models\Setting;
 use portalium\site\widgets\Language;
 use portalium\site\widgets\Brand;
+use portalium\menu\models\Menu;
 use portalium\menu\widgets\Nav;
 
 Theme::registerAppAsset($this);
@@ -16,7 +21,7 @@ Theme::registerAppAsset($this);
 <?php $this->beginPage() ?>
 <!doctype html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
@@ -24,58 +29,58 @@ Theme::registerAppAsset($this);
     <?= Html::csrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
+    
+  </head>
+  <body>
+  <?php $this->beginBody() ?>
 
-</head>
-<body>
-<?php $this->beginBody() ?>
+    <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
+        <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6" href="<?= Yii::$app->homeUrl ?>">
+            <?= Brand::widget(['options' => ['height' => '30px']]) ?> 
+        </a>
+        <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="w-100 px-4 text-light">
+            <?= Html::encode($this->title) ?>
+        </div>
+        <?= Nav::widget([
+            'slug' => 'web-menu',
+            'options' => ['class' => 'nav nav-pills flex-shrink-0 dropdown']
+        ]) ?>
+    </header>
 
-<header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
-    <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6" href="<?= Yii::$app->homeUrl ?>">
-        <?= Brand::widget(['options' => ['height' => '30px']]) ?>
-    </a>
-    <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="w-100 px-4 text-light">
-        <?= Html::encode($this->title) ?>
-    </div>
-    <?= Nav::widget([
-        'slug' => 'web-menu',
-        'options' => ['class' => 'nav nav-pills flex-shrink-0 dropdown']
-    ]) ?>
-</header>
-
-<div class="container-fluid">
-    <div class="row">
-        <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light">
-            <div class="position-sticky pt-4 sidebar-sticky">
-                <?= Nav::widget([
-                    'slug' => 'web-menu',
-                    'options' => ['class' => 'nav nav-pills flex-column']
-                ]);
-                ?>
-            </div>
-        </nav>
-        <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+    <div class="container-fluid">
+        <div class="row">
+            <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block text-bg-dark ">
+                <div class="position-sticky pt-4 sidebar-sticky">
+                    <?= Nav::widget([
+                            'slug' => 'web-menu',
+                            'options' => ['class' => 'nav nav-pills flex-column']
+                        ]); 
+                    ?>
+                </div>
+            </nav>
+            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                    <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
                     <?= Breadcrumbs::widget([
                         'links' => !empty($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
                     ])?>
-                </nav>
-            </div>
+                    </nav>
+                </div>
 
-            <?= Alert::widget() ?>
-            <?= $content ?>
+                <?= Alert::widget() ?>
+                <?= $content ?>
 
-        </main>
+            </main>
+        </div>
     </div>
-</div>
-<footer class="footer">
-    <p class="pull-left px-3">&copy; Portalium <?= date('Y') ?> </p>
-    <p class="pull-right px-3">DigiNova</p>
-</footer>
+    <footer class="footer">
+        <p class="pull-left px-3">&copy; Portalium <?= date('Y') ?> </p>
+        <p class="pull-right px-3">DigiNova</p>
+    </footer>
 <?php $this->endBody() ?>
-</body>
+  </body>
 </html>
 <?php $this->endPage() ?>

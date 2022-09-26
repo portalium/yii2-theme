@@ -1,14 +1,19 @@
 <?php
 
+
 use yii\helpers\ArrayHelper;
 
 use portalium\theme\Theme;
+use portalium\theme\Module;
 use portalium\theme\helpers\Html;
+use portalium\site\models\Setting;
+use portalium\site\widgets\Brand;
 use portalium\theme\widgets\Alert;
 use portalium\theme\widgets\NavBar;
+use portalium\theme\bundles\AppAsset;
 use portalium\theme\widgets\Breadcrumbs;
-use portalium\site\widgets\Brand;
 use portalium\menu\widgets\Nav;
+use portalium\menu\models\Menu;
 
 Theme::registerAppAsset($this);
 
@@ -51,7 +56,7 @@ Theme::registerAppAsset($this);
             ])?>
 
         </nav>
-
+        
         <?= Alert::widget() ?>
         <?= $content ?>
     </div>
