@@ -12,6 +12,6 @@ class GridView extends \yii\grid\GridView
                 'class' => 'pagination justify-content-end',
             ],
         ];
-        $this->layout = "{items}{pager}{summary}";
+        $this->layout = "{items}<div class='row'><div class='col-md-6'>{summary}</div><div class='col-md-6'>{pager}</div></div>";
     }
 }
