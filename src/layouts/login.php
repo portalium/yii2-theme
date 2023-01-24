@@ -15,8 +15,7 @@ use portalium\menu\widgets\Nav;
 
 Theme::registerAppAsset($this);
 
-$settings   = ArrayHelper::map(Setting::find()->asArray()->all(),'name','value');
-$languages  = json_decode(Setting::findOne(['name' => 'app::language'])->config,true);
+$languages  = Yii::$app->settings->getConfig('app::language');
 
 ?>
 <?php $this->beginPage() ?>
