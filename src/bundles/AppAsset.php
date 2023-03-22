@@ -25,6 +25,7 @@ class AppAsset extends AssetBundle
     ];
 
     public $js = [
+        'apps/custom/js/tab.js',
     ];
 
     public function init()
