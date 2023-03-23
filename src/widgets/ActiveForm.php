@@ -5,6 +5,7 @@ class ActiveForm extends \yii\bootstrap5\ActiveForm
 {
     public function init()
     {
+        $this->layout = 'horizontal';
         parent::init();
     }
 }
