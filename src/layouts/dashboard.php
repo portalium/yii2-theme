@@ -45,7 +45,7 @@ Theme::registerAppAsset($this);
             <?= Html::encode($this->title) ?>
         </div>
         <?= Nav::widget([
-            'slug' => Yii::$app->setting->getValue('site::menu'),
+            'slug' => Yii::$app->setting->getValue('main::menu'),
             'options' => ['class' => 'nav nav-pills flex-shrink-0 dropdown']
         ]) ?>
     </header>
@@ -55,7 +55,7 @@ Theme::registerAppAsset($this);
             <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block text-bg-dark ">
                 <div class="position-sticky pt-4 sidebar-sticky">
                     <?= Nav::widget([
-                            'slug' => Yii::$app->setting->getValue('main::menu'),
+                            'slug' => Yii::$app->setting->getValue('site::menu'),
                             'options' => ['class' => 'nav nav-pills flex-column']
                         ]); 
                     ?>
