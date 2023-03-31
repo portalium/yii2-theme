@@ -3,16 +3,10 @@
 use yii\helpers\ArrayHelper;
 
 use portalium\theme\Theme;
-use portalium\theme\Module;
 use portalium\theme\helpers\Html;
 use portalium\theme\widgets\Alert;
-use portalium\theme\widgets\NavBar;
-use portalium\theme\bundles\AppAsset;
 use portalium\theme\widgets\Breadcrumbs;
-use portalium\site\models\Setting;
-use portalium\site\widgets\Language;
 use portalium\site\widgets\Brand;
-use portalium\menu\models\Menu;
 use portalium\menu\widgets\Nav;
 
 Theme::registerAppAsset($this);
@@ -45,7 +39,7 @@ Theme::registerAppAsset($this);
             <?= Html::encode($this->title) ?>
         </div>
         <?= Nav::widget([
-            'slug' => Yii::$app->setting->getValue('main::menu'),
+            'id' => Yii::$app->setting->getValue('theme::main_menu'),
             'options' => ['class' => 'nav nav-pills flex-shrink-0 dropdown']
         ]) ?>
     </header>
@@ -55,7 +49,7 @@ Theme::registerAppAsset($this);
             <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block text-bg-dark ">
                 <div class="position-sticky pt-4 sidebar-sticky">
                     <?= Nav::widget([
-                            'slug' => Yii::$app->setting->getValue('site::menu'),
+                            'id' => Yii::$app->setting->getValue('theme::side_menu'),
                             'options' => ['class' => 'nav nav-pills flex-column']
                         ]); 
                     ?>

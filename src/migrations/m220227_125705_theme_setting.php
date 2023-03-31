@@ -19,7 +19,7 @@ class m220227_125705_theme_setting extends Migration
                 'model' => [
                     'class' => 'portalium\menu\models\Menu', 
                     'map' => [
-                        'key' => 'slug' ,
+                        'key' => 'id_menu' ,
                         'value' => 'name'
                     ],
                     'where' => [
@@ -39,7 +39,7 @@ class m220227_125705_theme_setting extends Migration
                 'model' => [
                     'class' => 'portalium\menu\models\Menu', 
                     'map' => [
-                        'key' => 'slug' ,
+                        'key' => 'id_menu' ,
                         'value' => 'name'
                     ],
                     'where' => [
@@ -59,7 +59,7 @@ class m220227_125705_theme_setting extends Migration
                 'model' => [
                     'class' => 'portalium\menu\models\Menu', 
                     'map' => [
-                        'key' => 'slug' ,
+                        'key' => 'id_menu' ,
                         'value' => 'name'
                     ],
                     'where' => [
