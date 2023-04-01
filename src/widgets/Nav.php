@@ -21,7 +21,7 @@ class Nav extends \yii\bootstrap5\Nav
             throw new InvalidConfigException("The 'label' option is required.");
         }
         $encodeLabel = $item['encode'] ?? $this->encodeLabels;
-        $label = $item['label'];
+        $label = Html::decode($item['label']);
         $options = ArrayHelper::getValue($item, 'options', []);
         $items = ArrayHelper::getValue($item, 'items');
         $url = ArrayHelper::getValue($item, 'url', '#');
