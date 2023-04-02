@@ -14,4 +14,5 @@ return [
     'Import' => 'İçe Aktar',
     'Roles' => 'Roller',
     'Permissions' => 'İzinler',
+    'Accounting' => 'Muhasebe',
 ];

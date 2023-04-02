@@ -43,7 +43,7 @@ Theme::registerAppAsset($this);
         ]);?>
 
         <?= Nav::widget([
-            'slug' => 'web-menu',
+            'id' => Yii::$app->setting->getValue('theme::main_menu'),
             'options' => ['class' => 'navbar-nav ms-auto']
         ]) ?>
 

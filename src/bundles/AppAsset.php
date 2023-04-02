@@ -26,6 +26,15 @@ class AppAsset extends AssetBundle
 
     public $js = [
         'apps/custom/js/tab.js',
+        'apps/custom/js/jquery.min.js'
+    ];
+
+    public $publishOptions = [
+        'forceCopy' => YII_DEBUG,
+    ];
+
+    public $jsOptions = [
+        'position' => \yii\web\View::POS_HEAD
     ];
 
     public function init()
