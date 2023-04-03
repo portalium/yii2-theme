@@ -13,7 +13,7 @@ class m220227_125705_theme_setting extends Migration
             'module' => 'menu',
             'name' => 'theme::main_menu',
             'label' => 'Active Web Menu',
-            'value' => 'web-menu',
+            'value' => '1',
             'type' => Form::TYPE_DROPDOWNLIST,
             'config' => json_encode([
                 'model' => [
@@ -33,7 +33,7 @@ class m220227_125705_theme_setting extends Migration
             'module' => 'menu',
             'name' => 'theme::site_menu',
             'label' => 'Active Site Menu',
-            'value' => 'web-menu',
+            'value' => '1',
             'type' => Form::TYPE_DROPDOWNLIST,
             'config' => json_encode([
                 'model' => [
@@ -53,7 +53,7 @@ class m220227_125705_theme_setting extends Migration
             'module' => 'menu',
             'name' => 'menu::mobile',
             'label' => 'Active Mobile Menu',
-            'value' => 'mobile-menu',
+            'value' => '1',
             'type' => Form::TYPE_DROPDOWNLIST,
             'config' => json_encode([
                 'model' => [
