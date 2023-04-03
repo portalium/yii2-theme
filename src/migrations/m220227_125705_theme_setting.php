@@ -11,7 +11,7 @@ class m220227_125705_theme_setting extends Migration
     {
         $this->insert(SiteModule::$tablePrefix . 'setting', [
             'module' => 'menu',
-            'name' => 'main::menu',
+            'name' => 'theme::main_menu',
             'label' => 'Active Web Menu',
             'value' => 'web-menu',
             'type' => Form::TYPE_DROPDOWNLIST,
@@ -31,7 +31,7 @@ class m220227_125705_theme_setting extends Migration
 
         $this->insert(SiteModule::$tablePrefix . 'setting', [
             'module' => 'menu',
-            'name' => 'site::menu',
+            'name' => 'theme::site_menu',
             'label' => 'Active Site Menu',
             'value' => 'web-menu',
             'type' => Form::TYPE_DROPDOWNLIST,
