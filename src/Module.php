@@ -20,6 +20,24 @@ class Module extends \portalium\base\Module
         ];
     }
 
+    public static function getLayouts()
+    {
+        return [
+            [
+                'layout' => 'main',
+                'name' => self::t('Main'),
+            ],
+            [
+                'layout' => 'dashboard',
+                'name' => self::t('Dashboard'),
+            ],
+            [
+                'layout' => 'login',
+                'name' => self::t('Login'),
+            ],
+        ];
+    }
+
     public static function t($message, array $params = [])
     {
         return parent::coreT('theme', $message, $params);
