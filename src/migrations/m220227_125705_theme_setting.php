@@ -31,8 +31,8 @@ class m220227_125705_theme_setting extends Migration
 
         $this->insert(SiteModule::$tablePrefix . 'setting', [
             'module' => 'menu',
-            'name' => 'theme::site_menu',
-            'label' => 'Active Site Menu',
+            'name' => 'theme::side_menu',
+            'label' => 'Active Side Menu',
             'value' => '1',
             'type' => Form::TYPE_DROPDOWNLIST,
             'config' => json_encode([
