@@ -90,3 +90,8 @@ body {
     border-color: transparent;
     box-shadow: 0 0 0 3px rgba(255, 255, 255, .25);
   }
+
+  .navbar {
+    min-height: 56px; 
+    background-color: #000000;
+  }

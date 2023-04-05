@@ -39,6 +39,7 @@ Theme::registerAppAsset($this);
             'brandUrl' => Yii::$app->homeUrl,
             'options' => [
                 'class' => 'navbar navbar-expand-lg fixed-top navbar-dark bg-dark pt-0 pb-0',
+                'style' => 'min-height: 56px; background-color: #000000'
             ],
         ]);?>
 
