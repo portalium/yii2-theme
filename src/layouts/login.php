@@ -1,21 +1,13 @@
 <?php
 
-use yii\helpers\ArrayHelper;
 use portalium\theme\Theme;
-use portalium\theme\Module;
 use portalium\theme\helpers\Html;
 use portalium\theme\widgets\Alert;
-use portalium\theme\widgets\NavBar;
-use portalium\theme\bundles\AppAsset;
-use portalium\theme\widgets\Breadcrumbs;
-use portalium\site\models\Setting;
-use portalium\site\widgets\Language;
-use portalium\menu\models\Menu;
-use portalium\menu\widgets\Nav;
+
 
 Theme::registerAppAsset($this);
 
-$languages  = Yii::$app->settings->getConfig('app::language');
+$languages  = Yii::$app->setting->getConfig('app::language');
 
 ?>
 <?php $this->beginPage() ?>
