@@ -38,8 +38,8 @@ Theme::registerAppAsset($this);
             'brandLabel' => Brand::widget(['options' => ['height' => '30px']]),
             'brandUrl' => Yii::$app->homeUrl,
             'options' => [
-                'class' => 'navbar navbar-expand-lg fixed-top navbar-dark bg-dark pt-0 pb-0',
-                'style' => 'min-height: 56px; background-color: #000000'
+                'class' => 'navbar navbar-expand-lg fixed-top navbar-dark pt-0 pb-0',
+                'style' => 'background-color: #000000 !important; height: 56px !important;',
             ],
         ]);?>
 
