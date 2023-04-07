@@ -1,8 +1,11 @@
 <?php
 namespace portalium\theme\widgets;
 
+use Yii;
+
 class GridView extends \yii\grid\GridView
 {
+    public $paginationParams;
     public function init()
     {
         parent::init();
@@ -12,6 +15,39 @@ class GridView extends \yii\grid\GridView
                 'class' => 'pagination justify-content-end',
             ],
         ];
+        //if tab info is set, then add pager links to tab info
+
+
         $this->layout = "{items}<div class='row'><div class='col-md-6'>{summary}</div><div class='col-md-6'>{pager}</div></div>";
     }
+
+    public function renderPager()
+    {
+        $pager = parent::renderPager();
+
+        if ($this->paginationParams && isset($this->paginationParams['urlParams'])) {
+            $urlParams = $this->paginationParams['urlParams'];
+            $anchorParams = [];
+
+            foreach ((array) $urlParams as $key => $value) {
+                if ($key === '#') {
+                    $anchorParams[] = $value;
+                } else {
+                    $urlSeparator = (strpos($pager, '?') !== false) ? '&' : '?';
+                    $pager = preg_replace('/href="([^"]*)"/', 'href="$1' . $urlSeparator . $key . '=' . $value . '"', $pager);
+                }
+            }
+
+            if (!empty($anchorParams)) {
+                $anchorParams = '#' . implode(',', $anchorParams);
+                $pager = preg_replace('/href="([^"]*)"/', 'href="$1' . $anchorParams . '"', $pager);
+            }
+        }
+
+        return $pager;
+    }
+
+
+
+    
 }
