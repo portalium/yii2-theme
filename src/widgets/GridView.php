@@ -15,8 +15,6 @@ class GridView extends \yii\grid\GridView
                 'class' => 'pagination justify-content-end',
             ],
         ];
-        //if tab info is set, then add pager links to tab info
-
 
         $this->layout = "{items}<div class='row'><div class='col-md-6'>{summary}</div><div class='col-md-6'>{pager}</div></div>";
     }
