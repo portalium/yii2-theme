@@ -1,10 +1,10 @@
 <?php
 namespace portalium\theme\widgets;
 
-use portalium\grid\ActionColumn as GridActionColumn;
+
 use Yii;
 
-class ActionColumn extends GridActionColumn
+class ActionColumn extends \portalium\grid\ActionColumn
 {
     public function init()
     {
