@@ -10,6 +10,8 @@ class Tabs extends \yii\bootstrap5\Tabs
                 $this->items[$key]['linkOptions'] = ['style' => 'color: #333; border-bottom: 1px solid #ddd;'];
             }
         }
+
+        $this->options['style'] = 'margin-bottom: 30px;';
         parent::init();
     }
 }
