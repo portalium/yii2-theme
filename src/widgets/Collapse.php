@@ -1,7 +1,7 @@
 <?php
 namespace portalium\theme\widgets;
 
-class Collapse extends \yii\bootstrap5\Collapse
+class Collapse extends \portalium\bootstrap5\Collapse
 {
     public function init()
     {

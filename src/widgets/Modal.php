@@ -1,7 +1,7 @@
 <?php
 namespace portalium\theme\widgets;
 
-class Modal extends \yii\bootstrap5\Modal
+class Modal extends \portalium\bootstrap5\Modal
 {
     public function init()
     {

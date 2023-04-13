@@ -1,7 +1,7 @@
 <?php
 namespace portalium\theme\widgets;
 
-class Dropdown extends \yii\bootstrap5\Dropdown
+class Dropdown extends \portalium\bootstrap5\Dropdown
 {
     public function init()
     {
