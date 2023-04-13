@@ -4,7 +4,7 @@ use yii\helpers\ArrayHelper;
 
 use portalium\theme\Theme;
 use portalium\theme\helpers\Html;
-use portalium\theme\widgets\Alert;
+use portalium\site\widgets\FlashMessage;
 use portalium\theme\widgets\Breadcrumbs;
 use portalium\site\widgets\Brand;
 use portalium\menu\widgets\Nav;
@@ -64,7 +64,7 @@ Theme::registerAppAsset($this);
                     </nav>
                 </div>
 
-                <?= Alert::widget() ?>
+                <?= FlashMessage::widget() ?>
                 <?= $content ?>
 
             </main>

@@ -1,7 +1,7 @@
 <?php
 namespace portalium\theme\widgets;
 
-class Button extends \yii\bootstrap5\Button
+class Button extends \portalium\bootstrap5\Button
 {
     public function init()
     {

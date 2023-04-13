@@ -8,7 +8,7 @@ use portalium\theme\Module;
 use portalium\theme\helpers\Html;
 use portalium\site\models\Setting;
 use portalium\site\widgets\Brand;
-use portalium\theme\widgets\Alert;
+use portalium\site\widgets\FlashMessage;
 use portalium\theme\widgets\NavBar;
 use portalium\theme\bundles\AppAsset;
 use portalium\theme\widgets\Breadcrumbs;
@@ -58,7 +58,7 @@ Theme::registerAppAsset($this);
 
         </nav>
         
-        <?= Alert::widget() ?>
+        <?= FlashMessage::widget() ?>
         <?= $content ?>
     </div>
 </div>
