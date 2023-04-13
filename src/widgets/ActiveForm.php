@@ -1,7 +1,7 @@
 <?php
 namespace portalium\theme\widgets;
 
-class ActiveForm extends \yii\bootstrap5\ActiveForm
+class ActiveForm extends \portalium\bootstrap5\ActiveForm
 {
     public function init()
     {
