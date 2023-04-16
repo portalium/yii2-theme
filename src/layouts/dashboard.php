@@ -65,13 +65,15 @@ Theme::registerAppAsset($this);
                     </nav>
                 </div>
                 <?php
-                Yii::warning(Yii::$app->session->id);
+
                     Pjax::begin([
                         'id' => 'pjax-flash-message',
                     ]);
-                    Yii::warning('FlashMessage::widget()');
+
                 ?>
-                    <?= FlashMessage::widget() ?>
+                    <?= FlashMessage::widget([
+                        'autoDismiss' => true,
+                    ]) ?>
                 <?php Pjax::end(); ?>
                 <?= $content ?>
 
