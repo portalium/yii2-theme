@@ -8,6 +8,7 @@ use portalium\site\widgets\FlashMessage;
 use portalium\theme\widgets\Breadcrumbs;
 use portalium\site\widgets\Brand;
 use portalium\menu\widgets\Nav;
+use yii\widgets\Pjax;
 
 Theme::registerAppAsset($this);
 
@@ -63,8 +64,17 @@ Theme::registerAppAsset($this);
                     ])?>
                     </nav>
                 </div>
+                <?php
 
-                <?= FlashMessage::widget() ?>
+                    Pjax::begin([
+                        'id' => 'pjax-flash-message',
+                    ]);
+
+                ?>
+                    <?= FlashMessage::widget([
+                        'autoDismiss' => true,
+                    ]) ?>
+                <?php Pjax::end(); ?>
                 <?= $content ?>
 
             </main>
