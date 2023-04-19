@@ -26,7 +26,8 @@ class AppAsset extends AssetBundle
 
     public $js = [
         'apps/custom/js/tab.js',
-        'apps/custom/js/jquery.min.js'
+        'apps/custom/js/jquery.min.js',
+        'apps/js/toggle.js'
     ];
 
     public $publishOptions = [

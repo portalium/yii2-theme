@@ -69,3 +69,17 @@
     font-size: 13px;
     font-weight: 400;
 }
+
+/* custom */
+
+.black{
+    /* color: #000!important; */
+    background-color: black!important;
+}
+
+@media (max-width: 768px) {
+    .mobile-column{
+        display: flex;
+        flex-direction: column;
+    }
+}
