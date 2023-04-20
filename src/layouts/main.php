@@ -35,7 +35,7 @@ Theme::registerAppAsset($this);
     <div class="container">
 
         <?php NavBar::begin([
-            'brandLabel' => Brand::widget(['options' => ['height' => '30px']]),
+            'brandLabel' => Brand::widget(['options' => ['height' => '30px'], 'title' => true]),
             'brandUrl' => Yii::$app->homeUrl,
             'options' => [
                 'class' => 'navbar navbar-expand-lg fixed-top navbar-dark  pt-0 pb-0',
@@ -44,7 +44,7 @@ Theme::registerAppAsset($this);
         ]);?>
 
         <?= Nav::widget([
-            'id' => Yii::$app->setting->getValue('theme::main_menu'),
+            'id' => Yii::$app->setting->getValue('menu::main'),
             'options' => ['class' => 'navbar-nav ms-auto']
         ]) ?>
 

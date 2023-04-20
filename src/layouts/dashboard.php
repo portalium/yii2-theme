@@ -31,7 +31,7 @@ Theme::registerAppAsset($this);
 
     <header class="navbar navbar-dark sticky-top flex-md-nowrap p-0 shadow" style="background-color: #000000 !important; height: 56px !important;">
         <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6" href="<?= Yii::$app->homeUrl ?>">
-            <?= Brand::widget(['options' => ['height' => '30px']]) ?> 
+            <?= Brand::widget(['options' => ['height' => '30px'], 'title' => true]) ?> 
         </a>
         <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -40,7 +40,7 @@ Theme::registerAppAsset($this);
             <?= Html::encode($this->title) ?>
         </div>
         <?= Nav::widget([
-            'id' => Yii::$app->setting->getValue('theme::main_menu'),
+            'id' => Yii::$app->setting->getValue('menu::main'),
             'options' => ['class' => 'nav nav-pills flex-shrink-0 dropdown']
         ]) ?>
     </header>
@@ -50,7 +50,7 @@ Theme::registerAppAsset($this);
             <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block text-bg-dark ">
                 <div class="position-sticky pt-4 sidebar-sticky">
                     <?= Nav::widget([
-                            'id' => Yii::$app->setting->getValue('theme::side_menu'),
+                            'id' => Yii::$app->setting->getValue('menu::side'),
                             'options' => ['class' => 'nav nav-pills flex-column']
                         ]); 
                     ?>
