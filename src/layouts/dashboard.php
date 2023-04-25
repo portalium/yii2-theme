@@ -34,14 +34,13 @@ Theme::registerAppAsset($this);
                 <button class="navbar-toggler d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon color-filter"></span>
             </button>
-                <!-- <div class="row col-md-4 justify-content-around align-items-center"> -->
                 <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6 d-flex ms-auto ms-md-0 justify-content-center" style="color:white" href="<?=Yii::$app->homeUrl?>">
                     <?=Brand::widget(['title' => true, 'options' => ['height' => '30px']])?>
                 </a>
                 <div class="px-4 text-light col-md-3 col-lg-2 me-0 px-3 fs-6 d-flex justify-content-center mt-1 mb-1 d-none d-md-block d-lg-block">
                     <?=Html::encode($this->title)?>
                 </div>
-            <!-- </div> -->
+           
                 <button class="navbar-toggler collapsed ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon color-filter"></span>
                 </button>
@@ -55,10 +54,6 @@ Theme::registerAppAsset($this);
                 </div>
             </div>
         </nav>
-        <!-- <?=Nav::widget([
-    'id' => Yii::$app->setting->getValue('theme::main_menu'),
-    'options' => ['class' => 'nav nav-pills flex-shrink-0 dropdown'],
-])?> -->
     </header>
 
     <div class="container-fluid">
@@ -69,6 +64,7 @@ Theme::registerAppAsset($this);
                             'id' => Yii::$app->setting->getValue('theme::side_menu'),
                             'options' => ['class' => 'nav nav-pills flex-column'],
                         ]);
+
                     ?>
                 </div>
             </nav>

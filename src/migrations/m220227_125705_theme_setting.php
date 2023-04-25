@@ -11,7 +11,7 @@ class m220227_125705_theme_setting extends Migration
     {
         $this->insert(SiteModule::$tablePrefix . 'setting', [
             'module' => 'menu',
-            'name' => 'theme::main_menu',
+            'name' => 'menu::main',
             'label' => 'Active Web Menu',
             'value' => '1',
             'type' => Form::TYPE_DROPDOWNLIST,
@@ -31,9 +31,9 @@ class m220227_125705_theme_setting extends Migration
 
         $this->insert(SiteModule::$tablePrefix . 'setting', [
             'module' => 'menu',
-            'name' => 'theme::side_menu',
+            'name' => 'menu::side',
             'label' => 'Active Side Menu',
-            'value' => '1',
+            'value' => '2',
             'type' => Form::TYPE_DROPDOWNLIST,
             'config' => json_encode([
                 'model' => [
@@ -68,7 +68,7 @@ class m220227_125705_theme_setting extends Migration
                 ]
             ])
         ]);
-        
+
     }
 
     public function down()
