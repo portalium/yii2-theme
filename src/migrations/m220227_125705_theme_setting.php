@@ -33,7 +33,7 @@ class m220227_125705_theme_setting extends Migration
             'module' => 'menu',
             'name' => 'menu::side',
             'label' => 'Active Side Menu',
-            'value' => '1',
+            'value' => '2',
             'type' => Form::TYPE_DROPDOWNLIST,
             'config' => json_encode([
                 'model' => [
@@ -68,7 +68,7 @@ class m220227_125705_theme_setting extends Migration
                 ]
             ])
         ]);
-        
+
     }
 
     public function down()
