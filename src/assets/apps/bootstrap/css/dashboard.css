@@ -112,6 +112,9 @@ body {
     filter: invert(42%) sepia(100%) hue-rotate(190deg) saturate(500%) brightness(119%) contrast(119%);
   }
 
-  .fill-screen{
-    min-height: 82.5vh;
+  @media (prefers-reduced-motion: reduce) {
+    .collapsing {
+        transition-property: width, visibility;
+        transition-duration: .35s;
+      }
   }
