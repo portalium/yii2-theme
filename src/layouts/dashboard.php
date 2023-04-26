@@ -33,7 +33,7 @@ Theme::registerAppAsset($this);
         <nav class="navbar navbar-expand-lg navbar-light h-100 p-0 col-md-8 w-100">
             <div class="container-fluid h-100 p-0">
                 <button class="navbar-toggler d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
-                	<span class="navbar-toggler-icon color-filter"></span>
+                    <span class="navbar-toggler-icon color-filter"></span>
                 </button>
                 <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6 d-flex ms-auto ms-md-0 justify-content-center" style="color:white" href="<?=Yii::$app->homeUrl?>">
                     <?=Brand::widget(['title' => true, 'options' => ['height' => '30px']])?>
@@ -70,7 +70,7 @@ Theme::registerAppAsset($this);
             <div class="col-md-9 ms-sm-auto col-lg-10 px-md-4 d-flex justify-content-center align-items-center border-top border-secondary d-md-none d-lg-none title">
                 <?=Html::encode($this->title)?>
             </div>
-            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 fill-screen">
                 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
                     <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
                     <?= Breadcrumbs::widget([
