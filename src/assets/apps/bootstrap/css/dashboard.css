@@ -95,3 +95,23 @@ body {
     min-height: 56px; 
     background-color: #000000;
   }
+
+  @media screen and (max-width: 768px) {
+    .mobile-column {
+      flex-direction: column;
+    }
+  }
+
+  .title{
+    background: black;
+    color: white;
+    height: 30px;
+  }
+
+  .color-filter{
+    filter: invert(42%) sepia(100%) hue-rotate(190deg) saturate(500%) brightness(119%) contrast(119%);
+  }
+
+  .fill-screen{
+    min-height: 82.5vh;
+  }
