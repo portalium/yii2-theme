@@ -28,62 +28,64 @@ Theme::registerAppAsset($this);
   </head>
   <body>
   <?php $this->beginBody() ?>
-
-    <header class="navbar navbar-dark sticky-top flex-md-nowrap p-0 shadow" style="background-color: #000000 !important; height: 56px !important;">
-        <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6" href="<?= Yii::$app->homeUrl ?>">
-            <?= Brand::widget(['options' => ['height' => '30px'], 'title' => true]) ?> 
-        </a>
-        <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="w-100 px-4 text-light">
-            <?= Html::encode($this->title) ?>
+   
+    <div class="wrapper">
+    <!-- Sidebar  -->
+    <nav id="sidebar" class="bg-dark">
+        <div class="sidebar-header bg-dark">
+            <a href="<?= Yii::$app->homeUrl ?>">
+                <img class="logo" src='https://mhsb.app/data/d2a49e25227dc20d55057d2d4cb49068.png'>
+            </a>
+            <button type="button" id="sidebarCollapse1" class="btn btn-info">
+                <i class="fa fa-align-left"></i>
+            </button>
         </div>
-        <?= Nav::widget([
-            'id' => Yii::$app->setting->getValue('menu::main'),
-            'options' => ['class' => 'nav nav-pills flex-shrink-0 dropdown']
-        ]) ?>
-    </header>
-
-    <div class="container-fluid">
-        <div class="row">
-            <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block text-bg-dark ">
-                <div class="position-sticky pt-4 sidebar-sticky">
-                    <?= Nav::widget([
-                            'id' => Yii::$app->setting->getValue('menu::side'),
-                            'options' => ['class' => 'nav nav-pills flex-column']
-                        ]); 
-                    ?>
-                </div>
-            </nav>
-            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                    <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
-                    <?= Breadcrumbs::widget([
-                        'links' => !empty($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
-                    ])?>
-                    </nav>
-                </div>
-                <?php
-
-                    Pjax::begin([
-                        'id' => 'pjax-flash-message',
+        <ul class="list-unstyled components">
+            <?=Nav::widget([
+                    'id' => Yii::$app->setting->getValue('theme::menu_side'),
+                    'options' => ['class' => 'nav nav-pills flex-column'],
                     ]);
+            ?>
+        </ul>
+    </nav>
 
-                ?>
-                    <?= FlashMessage::widget([
-                        'autoDismiss' => true,
-                    ]) ?>
-                <?php Pjax::end(); ?>
-                <?= $content ?>
-
-            </main>
+    <!-- Page Content  -->
+    <div id="main" class="min-vh-100 d-flex flex-column">
+        <nav class="navbar navbar-expand-lg navbar-light bg-dark" id='navbar'>
+                <div class="container-fluid">
+                    <button type="button" id="sidebarCollapse2" class="btn btn-info mobile-show">
+                        <i class="fa fa-align-left"></i>
+                    </button>
+                    <div class="title-desktop"><?= Html::encode($this->title) ?></div>
+                    <a class="m-auto" href="<?= Yii::$app->homeUrl ?>"><img class="logo mobile-logo" src='https://mhsb.app/data/d2a49e25227dc20d55057d2d4cb49068.png'></a>
+                    <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="fa fa-align-justify"></i>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                        <ul class="nav navbar-nav ml-auto list-padding">
+                            <?=Nav::widget([
+                                'id' => Yii::$app->setting->getValue('theme::menu_main'),
+                                'options' => ['class' => 'nav nav-pills flex-shrink-0 dropdown mobile-column direction', 'mobile-nav-style' => Yii::$app->setting->getValue('theme::mobile_direction')],
+                            ])?>
+                        </ul>
+                    </div>
+                </div>
+        </nav>
+        <div class="title-mobile bg-dark"><?= Html::encode($this->title) ?></div>
+        <div class="content-padding">
+            <nav class='bread' style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+                        <?= Breadcrumbs::widget([
+                            'links' => !empty($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
+                        ])?>
+            </nav>
+            <?= $content ?>
         </div>
+        <footer class="footer mt-auto border">
+            <p class="pull-left px-3">&copy; Portalium <?= date('Y') ?> </p>
+            <p class="pull-right px-3">DigiNova</p>
+        </footer>
     </div>
-    <footer class="footer">
-        <p class="pull-left px-3">&copy; Portalium <?= date('Y') ?> </p>
-        <p class="pull-right px-3">DigiNova</p>
-    </footer>
+</div>
 <?php $this->endBody() ?>
   </body>
 </html>
