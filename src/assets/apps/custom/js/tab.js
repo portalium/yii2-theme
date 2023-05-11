@@ -6,7 +6,7 @@ $(function () {
 });
 
 $(document).ready(function () {
-    $('#sidebarCollapse1, #sidebarCollapse2').on('click', function () {
+    $('#sidebar-collapse-desktop, #sidebar-collapse-mobile').on('click', function () {
         $('#sidebar').toggleClass('active');
         $('#navbar').toggleClass('active');
     });
