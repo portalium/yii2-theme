@@ -67,7 +67,7 @@ Theme::registerAppAsset($this);
                         <ul class="nav navbar-nav ml-auto list-padding">
                             <?=Nav::widget([
                                 'id' => Yii::$app->setting->getValue('theme::menu_main'),
-                                'options' => ['class' => 'nav nav-pills flex-shrink-0 dropdown mobile-column direction', 'mobile-nav-style' => Yii::$app->setting->getValue('theme::mobile_direction')],
+                                'options' => ['class' => 'nav nav-pills flex-shrink-0 dropdown mobile-column direction']
                             ])?>
                         </ul>
                     </div>

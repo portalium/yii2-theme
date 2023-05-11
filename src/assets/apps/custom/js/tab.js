@@ -13,6 +13,6 @@ $(document).ready(function () {
 });
 
 $(document).ready(function () {
-    $( 'ul[ mobile-nav-style=' + 'vertical' + ']' ).addClass( 'vertical-view' );
-    $( 'ul[ mobile-nav-style=' + 'horizontal' + ']' ).addClass( 'horizontal-view' );    
+    $( 'ul[ direction=' + 'vertical' + ']' ).addClass( 'vertical-view' );
+    $( 'ul[ direction=' + 'horizontal' + ']' ).addClass( 'horizontal-view' );    
 });
