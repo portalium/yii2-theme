@@ -1,6 +1,6 @@
 {
 	"name" : "portalium/yii2-theme",
-	"description" : "Theme Store Module for Portalium(Yii2)",
+	"description" : "Theme Module for Portalium(Yii2)",
 	"type" : "yii2-theme",
 	"license": "MIT",
 	"homepage" : "https://portalium.dev",
