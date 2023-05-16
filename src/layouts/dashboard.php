@@ -80,6 +80,7 @@ Theme::registerAppAsset($this);
                             'links' => !empty($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
                         ])?>
             </nav>
+            <?= FlashMessage::widget() ?>
             <?= $content ?>
         </div>
         <footer class="footer mt-auto border">
