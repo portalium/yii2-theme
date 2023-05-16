@@ -33,11 +33,11 @@ Theme::registerAppAsset($this);
     <!-- Sidebar  -->
     <nav id="sidebar" class="bg-dark">
         <div class="sidebar-header bg-dark">
-            <a href="<?= Yii::$app->homeUrl ?>">
-                <img class="logo" src='https://mhsb.app/data/d2a49e25227dc20d55057d2d4cb49068.png'>
+            <a class='logo' href="<?= Yii::$app->homeUrl ?>">
+                <?= Brand::widget(['options' => ['height' => '30px'], 'title' => true]) ?> 
             </a>
-            <button type="button" id="sidebarCollapse1" class="btn btn-info">
-                <i class="fa fa-align-left"></i>
+            <button type="button" id="sidebar-collapse-desktop" class="btn btn-dark">
+                <i class="fa fa-align-justify"></i>
             </button>
         </div>
         <ul class="list-unstyled components">
@@ -52,12 +52,14 @@ Theme::registerAppAsset($this);
     <!-- Page Content  -->
     <div id="main" class="min-vh-100 d-flex flex-column">
         <nav class="navbar navbar-expand-lg navbar-light bg-dark" id='navbar'>
-                <div class="container-fluid">
-                    <button type="button" id="sidebarCollapse2" class="btn btn-info mobile-show">
-                        <i class="fa fa-align-left"></i>
+                <div class="container-fluid justify-content-end">
+                    <button type="button" id="sidebar-collapse-mobile" class="btn btn-dark mobile-show">
+                        <i class="fa fa-align-justify"></i>
                     </button>
                     <div class="title-desktop"><?= Html::encode($this->title) ?></div>
-                    <a class="m-auto" href="<?= Yii::$app->homeUrl ?>"><img class="logo mobile-logo" src='https://mhsb.app/data/d2a49e25227dc20d55057d2d4cb49068.png'></a>
+                    <a class="m-auto logo mobile-logo" href="<?= Yii::$app->homeUrl ?>">
+                        <?= Brand::widget(['options' => ['height' => '30px'], 'title' => true]) ?> 
+                    </a>
                     <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <i class="fa fa-align-justify"></i>
                     </button>
@@ -65,7 +67,7 @@ Theme::registerAppAsset($this);
                         <ul class="nav navbar-nav ml-auto list-padding">
                             <?=Nav::widget([
                                 'id' => Yii::$app->setting->getValue('theme::menu_main'),
-                                'options' => ['class' => 'nav nav-pills flex-shrink-0 dropdown mobile-column direction', 'mobile-nav-style' => Yii::$app->setting->getValue('theme::mobile_direction')],
+                                'options' => ['class' => 'nav nav-pills flex-shrink-0 dropdown mobile-column direction']
                             ])?>
                         </ul>
                     </div>
