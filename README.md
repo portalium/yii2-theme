@@ -1,1 +1,1 @@
-# portalium-theme
+# yii2-theme

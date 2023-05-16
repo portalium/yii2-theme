@@ -6,13 +6,13 @@ $(function () {
 });
 
 $(document).ready(function () {
-    $('#sidebarCollapse1, #sidebarCollapse2').on('click', function () {
+    $('#sidebar-collapse-desktop, #sidebar-collapse-mobile').on('click', function () {
         $('#sidebar').toggleClass('active');
         $('#navbar').toggleClass('active');
     });
 });
 
 $(document).ready(function () {
-    $( 'ul[ mobile-nav-style=' + 'vertical' + ']' ).addClass( 'vertical-view' );
-    $( 'ul[ mobile-nav-style=' + 'horizontal' + ']' ).addClass( 'horizontal-view' );    
+    $( 'ul[ direction=' + 'vertical' + ']' ).addClass( 'vertical-view' );
+    $( 'ul[ direction=' + 'horizontal' + ']' ).addClass( 'horizontal-view' );    
 });
