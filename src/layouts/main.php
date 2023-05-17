@@ -35,7 +35,7 @@ Theme::registerAppAsset($this);
     <div class="container">
 
         <?php NavBar::begin([
-            'brandLabel' => Brand::widget(['options' => ['height' => '30px'], 'title' => true]),
+            'brandLabel' => Brand::widget(['options' => ['height' => '30px'], 'img' => Yii::$app->setting->getValue('app::logo_wide'), 'title' => true]),
             'brandUrl' => Yii::$app->homeUrl,
             'options' => [
                 'class' => 'navbar navbar-expand-lg fixed-top navbar-dark  pt-0 pb-0',
