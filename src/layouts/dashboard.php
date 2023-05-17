@@ -34,6 +34,7 @@ Theme::registerAppAsset($this);
             <div class="sidebar-header bg-dark">
                 <a class='logo' href="<?= Yii::$app->homeUrl ?>">
                     <?= Brand::widget([
+                        'img' => Yii::$app->setting->getValue('app::logo_wide'),
                         "options" => ["height" => "30px"],
                         "title" => true,
                     ]) ?> 
