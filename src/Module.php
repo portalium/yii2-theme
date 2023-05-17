@@ -17,6 +17,9 @@ class Module extends \portalium\base\Module
             'theme' => [
                 'class' => 'portalium\theme\Theme',
             ],
+            'deviceDetector' => [
+                'class' => 'portalium\theme\components\DeviceDetector',
+            ],
         ];
     }
 
