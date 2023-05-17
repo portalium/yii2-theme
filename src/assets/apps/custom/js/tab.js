@@ -8,7 +8,7 @@ $(function () {
 $(document).ready(function () {
     $('#sidebar-collapse-desktop, #sidebar-collapse-mobile').on('click', function () {
         $('#sidebar').toggleClass('active');
-        $('#navbar').toggleClass('active');
+        $('#main').toggleClass('active');
     });
 });
 

@@ -71,22 +71,20 @@ class m220227_125705_theme_setting extends Migration
 
         $this->insert(SiteModule::$tablePrefix . 'setting', [
             'module' => 'menu',
-            'name' => 'theme::mobile_direction',
-            'label' => 'Active Mobile Menu',
-            'value' => '1',
-            'type' => Form::TYPE_DROPDOWNLIST,
-            'config' => json_encode([
-                'model' => [
-                    'class' => 'portalium\menu\models\Menu', 
-                    'map' => [
-                        'key' => 'id_menu' ,
-                        'value' => 'name'
-                    ],
-                    'where' => [
-                        'type' => Menu::TYPE['mobile']
-                    ]
-                ]
-            ])
+            'name' => 'theme::menu_side_desktop',
+            'label' => 'Side Menu Default Status(Desktop)',
+            'value' => '',
+            'type' => Form::TYPE_RADIOLIST,
+            'config' => json_encode(['' => 'Show', 'active' => 'Hide'])
+        ]);
+
+        $this->insert(SiteModule::$tablePrefix . 'setting', [
+            'module' => 'menu',
+            'name' => 'theme::menu_side_mobile',
+            'label' => 'Side Menu Default Status(Mobile)',
+            'value' => '',
+            'type' => Form::TYPE_RADIOLIST,
+            'config' => json_encode(['active' => 'Show', '' => 'Hide'])
         ]);
     }
 

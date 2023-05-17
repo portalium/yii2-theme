@@ -20,12 +20,23 @@ a:focus {
     transition: all 0.3s;
 }
 
+.header {
+    z-index: 1;
+    position: fixed;
+    transition: all 0.2s;
+    width: calc(100% - 250px);
+}
+
 .navbar {
     padding: 15px 10px;
     background: #363636;
     border: none;
     border-radius: 0;
     box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.active .header{
+    width: calc(100% - 80px);
 }
 
 .navbar-btn {
@@ -62,6 +73,9 @@ span {
     color: #fff;
     transition: all 0.3s;
     padding: 0 0.5rem;
+    position: fixed;
+    top: 0;
+    bottom: 0;
 }
 
 #sidebar.active {
@@ -204,6 +218,11 @@ a.article:hover {
     width: 100%;
     min-height: 100vh;
     transition: all 0.3s;
+    margin-left: 250px;
+}
+
+#main.active{
+    margin-left: 80px;
 }
 
 .logo{
@@ -237,7 +256,8 @@ a.article:hover {
     display: none;
 }
 
-.content-padding {
+.content {
+    margin-top: 68px;
     padding: 30px 20px;
 }
 
@@ -255,6 +275,18 @@ a.article:hover {
 ----------------------------------------------------- */
 
 @media (max-width: 768px) {
+    #main {
+        margin-left: unset;
+    }
+
+    .header{
+        width: 100%;
+    }
+
+    .content{
+        margin-top: 100px;
+    }
+
     .mobile-show{
         display: block;
     }
@@ -316,6 +348,7 @@ a.article:hover {
 }
 
 .footer {
+    margin-top: auto;
     height: 70px;
 }
 
