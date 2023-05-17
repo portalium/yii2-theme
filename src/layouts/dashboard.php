@@ -41,8 +41,14 @@ Theme::registerAppAsset($this);
                 <button type="button" id="sidebar-collapse-desktop" class="btn btn-dark">
                     <i class="fa fa-align-justify"></i>
                 </button>
+                <!-- <button>
+                    <?= Brand::widget([
+                            "options" => ["height" => "30px"],
+                            "title" => true,
+                    ]) ?> 
+                </button> -->
             </div>
-            <ul class="list-unstyled components">
+            <ul class="list-unstyled components" closed-display-style="<?=Yii::$app->setting->getValue("theme::menu_closed")?>">
                 <?= Nav::widget([
                     "id" => Yii::$app->setting->getValue("theme::menu_side"),
                     "options" => ["class" => "nav nav-pills flex-column"],

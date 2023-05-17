@@ -86,6 +86,15 @@ class m220227_125705_theme_setting extends Migration
             'type' => Form::TYPE_RADIOLIST,
             'config' => json_encode(['active' => 'Show', '' => 'Hide'])
         ]);
+        
+        $this->insert(SiteModule::$tablePrefix . 'setting', [
+            'module' => 'menu',
+            'name' => 'theme::menu_closed',
+            'label' => 'Side Menu Closed Display Style',
+            'value' => '3',
+            'type' => Form::TYPE_RADIOLIST,
+            'config' => json_encode(['closed-only-icon' => 'Only Icon', 'closed-only-text' => 'Only Text', 'closed-icon-and-text' => 'Icon and Text'])
+        ]);
     }
 
     public function down()
