@@ -42,12 +42,20 @@ Theme::registerAppAsset($this);
                 <button type="button" id="sidebar-collapse-desktop" class="btn btn-dark">
                     <i class="fa fa-align-justify"></i>
                 </button>
-                <!-- <button>
-                    <?= Brand::widget([
-                            "options" => ["height" => "30px"],
-                            "title" => true,
-                    ]) ?> 
-                </button> -->
+                <a href="<?= Yii::$app->homeUrl ?>" class="sidebar-collapse-icon">
+                    <?php 
+                        $logo_square = Yii::$app->setting->getValue('app::logo_square');
+                        if(isset($logo_square['name'])){
+                            echo Brand::widget([
+                                'img' => $logo_square,
+                                "options" => ["height" => "30px"],
+                                "title" => true,
+                            ]);
+                        }else{
+                            echo substr(Yii::$app->setting->getValue('app::title'), 0, 1);
+                        }
+                    ?>
+                </a>
             </div>
             <ul class="list-unstyled components" closed-display-style="<?=Yii::$app->setting->getValue("theme::menu_closed")?>">
                 <?= Nav::widget([
@@ -71,6 +79,7 @@ Theme::registerAppAsset($this);
                             <a class="m-auto logo mobile-logo" href="<?= Yii
                                 ::$app->homeUrl ?>">
                                 <?= Brand::widget([
+                                    'img' => Yii::$app->setting->getValue('app::logo_wide'),
                                     "options" => ["height" => "30px"],
                                     "title" => true,
                                 ]) ?> 

@@ -10,9 +10,9 @@ class m220227_125705_theme_setting extends Migration
     public function up()
     {
         $this->insert(SiteModule::$tablePrefix . 'setting', [
-            'module' => 'menu',
+            'module' => 'theme',
             'name' => 'theme::menu_main',
-            'label' => 'Active Web Menu',
+            'label' => 'Main Menu',
             'value' => '1',
             'type' => Form::TYPE_DROPDOWNLIST,
             'config' => json_encode([
@@ -30,9 +30,9 @@ class m220227_125705_theme_setting extends Migration
         ]);
 
         $this->insert(SiteModule::$tablePrefix . 'setting', [
-            'module' => 'menu',
+            'module' => 'theme',
             'name' => 'theme::menu_side',
-            'label' => 'Active Side Menu',
+            'label' => 'Side Menu',
             'value' => '2',
             'type' => Form::TYPE_DROPDOWNLIST,
             'config' => json_encode([
@@ -49,28 +49,28 @@ class m220227_125705_theme_setting extends Migration
             ])
         ]);
 
-        $this->insert(SiteModule::$tablePrefix . 'setting', [
-            'module' => 'menu',
-            'name' => 'theme::menu_mobile',
-            'label' => 'Active Mobile Menu',
-            'value' => '1',
-            'type' => Form::TYPE_DROPDOWNLIST,
-            'config' => json_encode([
-                'model' => [
-                    'class' => 'portalium\menu\models\Menu', 
-                    'map' => [
-                        'key' => 'id_menu' ,
-                        'value' => 'name'
-                    ],
-                    'where' => [
-                        'type' => Menu::TYPE['mobile']
-                    ]
-                ]
-            ])
-        ]);
+        // $this->insert(SiteModule::$tablePrefix . 'setting', [
+        //     'module' => 'theme',
+        //     'name' => 'theme::menu_mobile',
+        //     'label' => 'Mobile Menu',
+        //     'value' => '1',
+        //     'type' => Form::TYPE_DROPDOWNLIST,
+        //     'config' => json_encode([
+        //         'model' => [
+        //             'class' => 'portalium\menu\models\Menu', 
+        //             'map' => [
+        //                 'key' => 'id_menu' ,
+        //                 'value' => 'name'
+        //             ],
+        //             'where' => [
+        //                 'type' => Menu::TYPE['mobile']
+        //             ]
+        //         ]
+        //     ])
+        // ]);
 
         $this->insert(SiteModule::$tablePrefix . 'setting', [
-            'module' => 'menu',
+            'module' => 'theme',
             'name' => 'theme::menu_side_desktop',
             'label' => 'Side Menu Default Status(Desktop)',
             'value' => '',
@@ -79,7 +79,7 @@ class m220227_125705_theme_setting extends Migration
         ]);
 
         $this->insert(SiteModule::$tablePrefix . 'setting', [
-            'module' => 'menu',
+            'module' => 'theme',
             'name' => 'theme::menu_side_mobile',
             'label' => 'Side Menu Default Status(Mobile)',
             'value' => '',
@@ -88,7 +88,7 @@ class m220227_125705_theme_setting extends Migration
         ]);
         
         $this->insert(SiteModule::$tablePrefix . 'setting', [
-            'module' => 'menu',
+            'module' => 'theme',
             'name' => 'theme::menu_closed',
             'label' => 'Side Menu Closed Display Style',
             'value' => '3',

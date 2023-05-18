@@ -1,5 +1,12 @@
 @import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
 
+.test{
+    background-color: unset;
+    color: white;
+    line-height: 36px;
+    border: unset;
+}
+
 body {
     font-family: "Poppins", sans-serif;
     background: #fafafa;
@@ -66,6 +73,20 @@ span {
 }
 .active ul[closed-display-style="closed-only-text"] i {
     display: none!important;
+}
+
+.active #sidebar-collapse-desktop {
+    margin-top: 22px;
+}
+
+.sidebar-collapse-icon {
+    display: none;
+    color: white;
+    line-height: 36px;
+}
+
+.active .sidebar-collapse-icon {
+    display: block;
 }
 
 .wrapper {
@@ -142,7 +163,7 @@ span {
 }
 
 .active .sidebar-header{
-    justify-content: center!important;
+    flex-direction: column-reverse;
 }
 
 #sidebar .sidebar-header strong {
@@ -157,14 +178,10 @@ span {
 #sidebar ul li > a {
     font-size: 1.1em;
     display: block;
-    /* color: white; */
 }
 
 #sidebar ul li > a:hover {
-    /* color: #0275d8;
-    background: #fff; */
     background-color: #0275d8;
-    /* color: #fff; */
 }
 
 
