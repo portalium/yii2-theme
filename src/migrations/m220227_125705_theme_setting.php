@@ -72,7 +72,7 @@ class m220227_125705_theme_setting extends Migration
         $this->insert(SiteModule::$tablePrefix . 'setting', [
             'module' => 'theme',
             'name' => 'theme::menu_side_desktop',
-            'label' => 'Side Menu Default Status(Desktop)',
+            'label' => 'Side Menu Default Status (Desktop)',
             'value' => '',
             'type' => Form::TYPE_RADIOLIST,
             'config' => json_encode(['' => 'Show', 'active' => 'Hide'])
@@ -81,7 +81,7 @@ class m220227_125705_theme_setting extends Migration
         $this->insert(SiteModule::$tablePrefix . 'setting', [
             'module' => 'theme',
             'name' => 'theme::menu_side_mobile',
-            'label' => 'Side Menu Default Status(Mobile)',
+            'label' => 'Side Menu Default Status (Mobile)',
             'value' => '',
             'type' => Form::TYPE_RADIOLIST,
             'config' => json_encode(['active' => 'Show', '' => 'Hide'])
