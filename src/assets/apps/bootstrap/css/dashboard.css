@@ -233,6 +233,19 @@ a.article:hover {
     color: white!important;
 }
 
+
+.nav.nav-pills > * {
+    margin-right: 5px;
+}
+
+.nav.nav-pills > *:last-child {
+    margin-right: 0;
+}
+
+/* .dropdown.nav-item:last-child {
+    margin-right: 0px;
+} */
+
 /* ---------------------------------------------------
     CONTENT STYLE
 ----------------------------------------------------- */
