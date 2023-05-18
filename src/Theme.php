@@ -6,6 +6,7 @@ use Yii;
 use yii\web\AssetBundle;
 use yii\base\InvalidConfigException;
 use portalium\theme\bundles\AppAsset;
+use portalium\theme\bundles\MainAsset;
 
 class Theme extends \yii\base\Component
 {
@@ -41,6 +42,11 @@ class Theme extends \yii\base\Component
 
     public static function registerAppAsset($view)
     {
-    	return static::$assetsBundle = AppAsset::register($view);
+            return static::$assetsBundle = AppAsset::register($view);
+    }
+
+    public static function registerMainAsset($view)
+    {
+            return static::$assetsBundle = MainAsset::register($view);
     }
 }

@@ -91,7 +91,7 @@ class m220227_125705_theme_setting extends Migration
             'module' => 'theme',
             'name' => 'theme::menu_closed',
             'label' => 'Side Menu Closed Display Style',
-            'value' => '3',
+            'value' => 'closed-icon-and-text',
             'type' => Form::TYPE_RADIOLIST,
             'config' => json_encode(['closed-only-icon' => 'Only Icon', 'closed-only-text' => 'Only Text', 'closed-icon-and-text' => 'Icon and Text'])
         ]);

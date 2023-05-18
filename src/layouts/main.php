@@ -16,6 +16,7 @@ use portalium\menu\widgets\Nav;
 use portalium\menu\models\Menu;
 
 Theme::registerAppAsset($this);
+Theme::registerMainAsset($this);
 
 ?>
 <?php $this->beginPage() ?>
@@ -31,44 +32,24 @@ Theme::registerAppAsset($this);
 </head>
 <body>
 <?php $this->beginBody() ?>
-<div class="wrap">
-    <div class="container">
 
-        <?php NavBar::begin([
-            'brandLabel' => Brand::widget(['options' => ['height' => '30px'], 'img' => Yii::$app->setting->getValue('app::logo_wide'), 'title' => true]),
-            'brandUrl' => Yii::$app->homeUrl,
-            'options' => [
-                'class' => 'navbar navbar-expand-lg fixed-top navbar-dark  pt-0 pb-0',
-                'style' => 'background-color: #000000 !important; height: 56px !important;',
-            ],
-        ]);?>
 
-        <?= Nav::widget([
-            'id' => Yii::$app->setting->getValue('theme::menu_main'),
-            'options' => ['class' => 'navbar-nav ms-auto']
-        ]) ?>
-
-        <?php NavBar::end(); ?>
-
-        <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
-
-            <?= Breadcrumbs::widget([
-                'links' => !empty($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
-            ])?>
-
-        </nav>
-        
-        <?= FlashMessage::widget() ?>
-        <?= $content ?>
+<div id="main" class="min-vh-100 d-flex flex-column ms-0 max-width-wrapper">
+    <?= $this->render(
+        '_header.php'
+    ) ?>
+    <div class="content">
+        <div class="cover">
+            <?= $content ?>
+        </div>
     </div>
+    <footer class="footer">
+        <div class="cover">
+            <p class="pull-left px-3">&copy; Portalium <?= date("Y") ?> </p>
+            <p class="pull-right px-3">DigiNova</p>
+        </div>
+    </footer>
 </div>
-
-<footer class="footer">
-    <div class="container">
-        <p class="pull-left">&copy; Portalium <?= date('Y') ?></p>
-        <p class="pull-right">DigiNova</p>
-    </div>
-</footer>
 
 <?php $this->endBody() ?>
 </body>
