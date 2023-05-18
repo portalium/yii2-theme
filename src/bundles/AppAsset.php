@@ -21,7 +21,6 @@ class AppAsset extends AssetBundle
         'apps/bootstrap/css/dashboard.css',
         'apps/bootstrap/css/sidebar.css',
         'apps/bootstrap/css/panel.css',
-
     ];
 
     public $js = [
