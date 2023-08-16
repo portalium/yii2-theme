@@ -1,14 +1,10 @@
-@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+/* @import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700"; */
 
 body {
-    font-family: "Poppins", sans-serif;
     background: #fafafa;
 }
 
 p {
-    font-family: "Poppins", sans-serif;
-    font-size: 1.1em;
-    font-weight: 300;
     line-height: 1.7em;
     color: #999;
 }
@@ -61,12 +57,34 @@ span {
     SIDEBAR STYLE
 ----------------------------------------------------- */
 
+.active ul[closed-display-style="closed-only-icon"] span {
+    display: none!important;
+}
+.active ul[closed-display-style="closed-only-text"] i {
+    display: none!important;
+}
+
+.active #sidebar-collapse-desktop {
+    margin-top: 22px;
+}
+
+.sidebar-collapse-icon {
+    display: none;
+    color: white;
+    line-height: 36px;
+}
+
+.active .sidebar-collapse-icon {
+    display: block;
+}
+
 .wrapper {
     display: flex;
     align-items: stretch;
 }
 
 #sidebar {
+    z-index: 1;
     min-width: 250px;
     max-width: 250px;
     background: #363636;
@@ -86,7 +104,6 @@ span {
 
 #sidebar.active .sidebar-header h3,
 #sidebar.active .CTAs,
-#sidebar.active .nav-item span,
 #sidebar.active .logo {
     display: none;
 }
@@ -102,18 +119,16 @@ span {
 #sidebar.active ul li a {
     padding: 20px 10px;
     text-align: center;
-    font-size: 0.85em;
 }
 
 #sidebar.active ul li a i {
     margin-right: 0;
     display: block;
-    font-size: 1.8em;
     margin-bottom: 5px;
 }
 
 #sidebar.active ul ul a {
-    padding: 10px 0 !important;
+    padding: 15px 0 !important;
 }
 
 #sidebar.active .dropdown-toggle::after {
@@ -135,26 +150,25 @@ span {
 }
 
 .active .sidebar-header{
-    justify-content: center!important;
+    flex-direction: column-reverse;
 }
 
 #sidebar .sidebar-header strong {
     display: none;
-    font-size: 1.8em;
 }
 
 #sidebar ul.components {
     padding: 20px 0;
 }
 
-#sidebar ul li a {
-    font-size: 1.1em;
+#sidebar ul li > a {
     display: block;
 }
 
-#sidebar ul li a:hover {
-    color: #7386d5;
+#sidebar ul li > a:hover {
+    background-color: #0275d8;
 }
+
 
 #sidebar ul li a i {
     margin-right: 10px;
@@ -179,7 +193,6 @@ a[data-toggle="collapse"] {
 }
 
 ul ul a {
-    font-size: 0.9em !important;
     background: #0275d8;
 }
 
@@ -189,7 +202,6 @@ ul.CTAs {
 
 ul.CTAs a {
     text-align: center;
-    font-size: 0.9em !important;
     display: block;
     border-radius: 5px;
     margin-bottom: 5px;
@@ -206,9 +218,33 @@ a.article:hover {
     color: #fff !important;
 }
 
-.nav.navbar-nav.ml-auto a {
+.nav.navbar-nav.ml-auto a
+{
     padding: 8px 17px 8px 17px !important;
 }
+
+.nav.navbar-nav.ml-auto a:hover{
+    background: #0275d8;
+    color: #fff;
+}
+
+.dropdown-toggle.nav-link
+{
+    color: white!important;
+}
+
+
+.nav.nav-pills > * {
+    margin-right: 5px;
+}
+
+.nav.nav-pills > *:last-child {
+    margin-right: 0;
+}
+
+/* .dropdown.nav-item:last-child {
+    margin-right: 0px;
+} */
 
 /* ---------------------------------------------------
     CONTENT STYLE
@@ -327,7 +363,6 @@ a.article:hover {
     }
 
     #sidebar ul li a i {
-        font-size: 1.3em;
     }
 
     #sidebar {
