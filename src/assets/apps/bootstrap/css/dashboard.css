@@ -83,6 +83,12 @@ span {
     align-items: stretch;
 }
 
+.vertical-view{
+
+    --bs-nav-link-hover-color: white !important;
+
+}
+
 #sidebar {
     z-index: 1;
     min-width: 250px;
