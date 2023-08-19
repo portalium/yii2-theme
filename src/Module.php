@@ -4,7 +4,7 @@ namespace portalium\theme;
 
 class Module extends \portalium\base\Module
 {
-    public static $name = 'theme';
+    public static $name = 'Theme';
     
     public static function moduleInit()
     {
