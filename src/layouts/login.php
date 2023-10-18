@@ -38,6 +38,7 @@ Theme::registerMainAsset($this);
     ) ?>
     <div class="content">
         <div class="cover">
+            <?= FlashMessage::widget() ?>
             <?= $content ?>
         </div>
     </div>
