@@ -114,6 +114,7 @@ Theme::registerAppAsset($this);
                                     : [],
                             ]) ?>
                 </nav>
+                <?= FlashMessage::widget() ?>
                 <?= $content ?>
             </div>
             <footer class="footer">
