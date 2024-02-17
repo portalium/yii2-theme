@@ -15,4 +15,7 @@ return [
     'Roles' => 'Roller',
     'Permissions' => 'İzinler',
     'Accounting' => 'Muhasebe',
+    'Contents' => 'İçerikler',
+    'Preferences' => 'Tercihler',
+    'Page Size' => 'Sayfa Boyutu',
 ];

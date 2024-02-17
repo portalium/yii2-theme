@@ -95,6 +95,17 @@ class m220227_125705_theme_setting extends Migration
             'type' => Form::TYPE_RADIOLIST,
             'config' => json_encode(['closed-only-icon' => 'Only Icon', 'closed-only-text' => 'Only Text', 'closed-icon-and-text' => 'Icon and Text'])
         ]);
+
+        $this->insert(SiteModule::$tablePrefix . 'setting', [
+            'module' => 'theme',
+            'name' => 'theme::page_size',
+            'label' => 'Default Page Size',
+            'value' => '10',
+            'type' => Form::TYPE_DROPDOWNLIST,
+            'config' => json_encode(['10' => '10', '20' => '20', '50' => '50', '100' => '100']),
+            'is_preference' => 1
+        ]);
+        
     }
 
     public function down()
