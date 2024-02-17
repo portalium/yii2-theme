@@ -26,6 +26,7 @@ Theme::registerMainAsset($this);
     <meta charset="<?= Yii::$app->charset ?>">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/*" href="<?= $this->getAssetManager()->getBundle(\portalium\theme\bundles\IconAsset::class)->baseUrl ?>/favicon.ico">
     <?= Html::csrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
@@ -44,7 +45,7 @@ Theme::registerMainAsset($this);
     </div>
     <footer class="footer">
         <div class="cover">
-            <p class="pull-left px-3">&copy; Portalium <?= date("Y") ?> </p>
+            <p class="pull-left px-3">&copy; <?= date("Y") ?> </p>
             <p class="pull-right px-3">DigiNova</p>
         </div>
     </footer>

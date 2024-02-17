@@ -12,7 +12,7 @@ use portalium\menu\widgets\Nav;
                     "title" => true,
                 ]) ?>
             </a>
-            <button class="btn btn-dark d-inline-block d-lg-none ml-auto fixed-menu-button" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="btn btn-dark d-flex d-lg-none ml-auto fixed-menu-button" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <i class="fa fa-align-justify"></i>
             </button>
             <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
