@@ -100,9 +100,9 @@ class m220227_125705_theme_setting extends Migration
             'module' => 'theme',
             'name' => 'theme::page_size',
             'label' => 'Default Page Size',
-            'value' => '10',
+            'value' => '24',
             'type' => Form::TYPE_DROPDOWNLIST,
-            'config' => json_encode(['10' => '10', '20' => '20', '50' => '50', '100' => '100']),
+            'config' => json_encode(['12' => '12', '24' => '24', '48' => '48']),
             'is_preference' => 1
         ]);
         
