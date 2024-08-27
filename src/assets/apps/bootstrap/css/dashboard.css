@@ -4,12 +4,6 @@ body {
   background: #fafafa;
 }
 
-#sidebar ul ul li {
-  margin-bottom:4px;
-  width: 100%;
-}
-
-
 p {
   line-height: 1.7em;
   color: #999;
@@ -370,11 +364,9 @@ a.article:hover {
     padding: 10px !important;
   }
 
+  #sidebar ul li a i {
+  }
 
-
-  .nav-item {
-    margin-bottom: 10px; /* Burada 10 piksel örnek olarak kullanılmıştır. İhtiyacınıza göre değiştirin */
-}
   #sidebar {
     margin-left: 0;
   }

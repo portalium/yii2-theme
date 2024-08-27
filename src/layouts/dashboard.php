@@ -107,7 +107,7 @@ IconAsset::register($this);
                                     "options" => [
                                         "class" =>
                                         "nav nav-pills flex-shrink-0 dropdown mobile-column direction",
-                                    ],
+                                    ], 
                                 ]) ?>
                             </ul>
                         </div>
