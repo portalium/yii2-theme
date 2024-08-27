@@ -224,6 +224,16 @@ body {
 .nav-link {
   color: black !important;
 }
+
+
+.placement[data-bs-placement="top-to-bottom"] i{
+
+  display: block;
+
+ 
+}
+
+
 .nav-link:hover {
   color: black !important;
   background-color: #f4f4f4;
