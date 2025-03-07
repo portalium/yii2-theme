@@ -18,4 +18,12 @@ return [
     'Contents' => 'İçerikler',
     'Preferences' => 'Tercihler',
     'Page Size' => 'Sayfa Boyutu',
+    'Show' => 'Göster',
+    'Hide' => 'Gizle',
+    'Only Icon' => 'Sadece Simge',
+    'Only Text' => 'Sadece Yazı',
+    'Icon and Text' => 'Simge ve Yazı'
+    
+    
+    
 ];
