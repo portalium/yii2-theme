@@ -18,4 +18,17 @@ return [
     'Contents' => 'İçerikler',
     'Preferences' => 'Tercihler',
     'Page Size' => 'Sayfa Boyutu',
+    'Theme' => 'Tema',
+    'Default Page Size' => 'Varsayılan Sayfa Boyutu',
+    'Main Menu' => 'Ana Menü',
+    'Side Menu' => 'Yan Menü',
+    'Side Menu Default Status (Desktop)' => 'Varsayılan Yan Menü Durumu (Masaüstü)',
+    'Side Menu Default Status (Mobile)' => 'Varsayılan Yan Menü Durumu (Mobil)',
+    'Side Menu Closed Display Style' => 'Kapalı Yan Menü Görüntüleme Stili',
+    'Show' => 'Göster',
+    'Hide' => 'Gizle',
+    'Only Icon' => 'Sadece simge',
+    'Only Text' => 'Sadece metin',
+    'Icon and Text' => 'Simge ve metin',
+
 ];
