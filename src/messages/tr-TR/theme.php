@@ -30,5 +30,4 @@ return [
     'Only Icon' => 'Sadece simge',
     'Only Text' => 'Sadece metin',
     'Icon and Text' => 'Simge ve metin',
-
 ];
