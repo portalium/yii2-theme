@@ -1,11 +1,17 @@
 .fixed-menu-button {
-    position: absolute;
-    top: 14px;
+    top: 10px;
+    position: absolute; 
+    right: 0; 
+    margin-right: 5px;
 }
 
 .logo-login {
     display: flex!important;
     margin-left: 0!important;
+}
+
+.mobile-logo {
+    margin-left: 5px !important;
 }
 
 .login-bar-width {
