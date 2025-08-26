@@ -16,6 +16,7 @@ class ListView extends \portalium\widgets\ListView
     public $paginationParams;
 
     public $showFooter = true;
+    public $customLayout = false;
     public function init()
     {
         parent::init();
@@ -26,6 +27,11 @@ class ListView extends \portalium\widgets\ListView
                 'class' => 'pagination justify-content-end',
             ],
         ];
+
+        if ($this->customLayout) {
+            return;
+        }
+
         if ($this->showFooter) {
             $this->layout = "{items}<div class='panel-footer d-flex justify-content-between'>" . str_replace('{items}', '', $this->layout) . '</div>';
         } else {
