@@ -143,7 +143,6 @@ IconAsset::register($this);
             </footer>
         </div>
     </div>
-    <?= $this->render('@portalium/storage/views/web/default/_filePreviewModal') ?>
     <?php $this->endBody(); ?>
 </body>
 
