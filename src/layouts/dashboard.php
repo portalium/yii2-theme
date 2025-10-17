@@ -58,26 +58,12 @@ IconAsset::register($this);
                     $logo_square = Yii::$app->setting->getValue('app::logo_square');
                     if (isset($logo_square['name'])) {
                         echo Brand::widget([
-                            'img' => $logo_square,  
+                            'img' => $logo_square,
                             "options" => ["height" => "30px"],
                             "title" => true,
                         ]);
                     } else {
                         echo substr(Yii::$app->setting->getValue('app::title'), 0, 1);
-                    }
-                    ?>
-                </a>
-                <a href="<?= Yii::$app->homeUrl ?>" class="sidebar-collapse-icon mt-2">
-                    <?php
-                    $login_image = Yii::$app->setting->getValue('app::login_image');
-                    if (isset($login_image['name'])) {
-                        echo Brand::widget([
-                            'img' => $login_image,
-                            "options" => ["height" => "30px"],
-                            "title" => false,
-                        ]);
-                    } else {
-                        echo '<span class="text-white">Login Image</span>';
                     }
                     ?>
                 </a>
