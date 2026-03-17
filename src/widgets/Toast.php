@@ -9,27 +9,53 @@ use portalium\theme\bundles\ToastifyAsset;
 class Toast extends Widget
 {
     /**
-     * Default toast duration (ms)
-     * Can be overridden per flash type or by widget property
+     * @var int Duration of the toast display in milliseconds.
      */
     public $duration = 4000;
 
     /**
-     * Optional color overrides
-     * Example: ['success' => 'linear-gradient(to right, #4caf50, #81c784)']
+     * @var array Additional color overrides for toast types.
      */
     public $colors = [];
+
+    /**
+     * @var array Color mappings for different alert types (e.g., success, error).
+     */
+    public $alertTypes = [];
+
+    /**
+     * @var string Position of the toast: 'left' or 'right'.
+     */
+    public $position = 'right';
+
+    /**
+     * @var string Gravity of the toast: 'top' or 'bottom'.
+     */
+    public $gravity = 'top';
+
+    /**
+     * @var bool Whether to show the close button on the toast.
+     */
+    public $close = true;
+
+    /**
+     * @var array Offset for the toast position as ['x' => int, 'y' => int].
+     */
+    public $offset = ['x' => 0, 'y' => 0];
+
+    /**
+     * @var bool Whether to stop the toast timer when focused.
+     */
+    public $stopOnFocus = true;
 
     public function init()
     {
         parent::init();
-        // Assets register
         ToastifyAsset::register($this->view);
     }
 
     public function run()
     {
-        // Session flash’larını al
         $flashes = Yii::$app->session->getAllFlashes();
         if (empty($flashes)) {
             return;
@@ -46,39 +72,60 @@ class Toast extends Widget
             }
         }
 
-        // Flash’ları temizle
         Yii::$app->session->removeAllFlashes();
 
-        // JSON encode
         $jsonData = json_encode(
             $toastData,
             JSON_HEX_TAG | JSON_HEX_APOS | JSON_HEX_QUOT | JSON_HEX_AMP
         );
 
-        // JS loop ile toast oluştur
+        $jsonColors = json_encode($this->colors);
+
+        $jsonAlertTypes = json_encode($this->alertTypes);
+
+        $jsonPosition = json_encode($this->position);
+
+        $jsonGravity = json_encode($this->gravity);
+
+        $jsonClose = json_encode($this->close);
+
+        $jsonOffset = json_encode($this->offset);
+
+        $jsonStopOnFocus = json_encode($this->stopOnFocus);
+
         $js = <<<JS
 (function(){
     var toasts = $jsonData;
-    toasts.forEach(function(t){
-        var colorMap = {
-            success: 'linear-gradient(to right, #00b09b, #96c93d)',
-            error: 'linear-gradient(to right, #ff5f6d, #ffc371)',
-            warning: 'linear-gradient(to right, #f7971e, #ffd200)',
-            info: 'linear-gradient(to right, #2193b0, #6dd5ed)',
-            default: '#333'
-        };
-        // Merge with custom colors from PHP
-        if (typeof window.toastColorOverrides === 'object') {
-            Object.assign(colorMap, window.toastColorOverrides);
-        }
-        var background = colorMap[t.type] || colorMap.default;
+    var colorMap = {
+        success: 'linear-gradient(to right, #00b09b, #96c93d)',
+        error: 'linear-gradient(to right, #ff5f6d, #ffc371)',
+        warning: 'linear-gradient(to right, #f7971e, #ffd200)',
+        info: 'linear-gradient(to right, #2193b0, #6dd5ed)',
+        default: '#333'
+    };
+    // Merge with alertTypes override
+    if ($jsonAlertTypes) {
+        Object.assign(colorMap, $jsonAlertTypes);
+    }
+    // Merge with frontend override
+    if (typeof window.toastColorOverrides === 'object') {
+        Object.assign(colorMap, window.toastColorOverrides);
+    }
+    // Merge with PHP override
+    if ($jsonColors) {
+        Object.assign(colorMap, $jsonColors);
+    }
 
+    toasts.forEach(function(t){
+        var background = colorMap[t.type] || colorMap.default;
         Toastify({
             text: t.text,
             duration: t.duration,
-            gravity: 'top',
-            position: 'right',
-            close: true,
+            gravity: $jsonGravity,
+            position: $jsonPosition,
+            close: $jsonClose,
+            offset: $jsonOffset,
+            stopOnFocus: $jsonStopOnFocus,
             style: {background: background},
         }).showToast();
     });
