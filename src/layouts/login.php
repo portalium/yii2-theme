@@ -13,6 +13,7 @@ use portalium\theme\widgets\NavBar;
 use portalium\theme\bundles\AppAsset;
 use portalium\theme\widgets\Breadcrumbs;
 use portalium\menu\widgets\Nav;
+use yii\widgets\Pjax;
 use portalium\menu\models\Menu;
 
 Theme::registerAppAsset($this);
@@ -39,7 +40,16 @@ Theme::registerMainAsset($this);
     ) ?>
     <div class="content">
         <div class="cover">
+            <?php
+            Pjax::begin([
+                'id' => 'pjax-flash-message',
+                'timeout' => 30000
+            ]);
+            ?>
             <?= FlashMessage::widget() ?>
+            <?php
+            Pjax::end();
+            ?>
             <?= $content ?>
         </div>
     </div>
