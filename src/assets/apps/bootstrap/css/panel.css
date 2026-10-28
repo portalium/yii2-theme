@@ -336,3 +336,36 @@
 .panel-danger > .panel-footer + .panel-collapse > .panel-body {
   border-bottom-color: #ebccd1;
 }
+
+/* GridView / ListView footer (summary, page sizer, pager) on narrow screens:
+   one row each, the pager scrolls sideways instead of being cut off */
+@media (max-width: 767.98px) {
+  .panel-footer.d-flex {
+    flex-wrap: wrap;
+    row-gap: 10px;
+  }
+
+  .panel-footer.d-flex > div {
+    flex: 1 0 100%;
+    flex-wrap: wrap;
+    align-items: center;
+    row-gap: 10px;
+  }
+
+  .panel-footer.d-flex > div > .d-flex {
+    align-items: center !important;
+    white-space: nowrap;
+  }
+
+  .panel-footer.d-flex nav {
+    flex: 1 0 100%;
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
+  .panel-footer.d-flex .pagination {
+    flex-wrap: nowrap;
+    justify-content: flex-start !important;
+    margin-bottom: 0;
+  }
+}
