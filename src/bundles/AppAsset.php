@@ -20,11 +20,13 @@ class AppAsset extends AssetBundle
         'apps/custom/css/custom.css',
         'apps/bootstrap/css/dashboard.css',
         'apps/bootstrap/css/sidebar.css',
+        'apps/bootstrap/css/menu.css',
         'apps/bootstrap/css/panel.css',
     ];
 
     public $js = [
         'apps/custom/js/tab.js',
+        'apps/custom/js/menu.js',
         'apps/custom/js/jquery.min.js'
     ];
 

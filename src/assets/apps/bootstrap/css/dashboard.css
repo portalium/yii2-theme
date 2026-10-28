@@ -92,8 +92,8 @@ span {
   z-index: 1;
   min-width: 250px;
   max-width: 250px;
-  background: white !important;
-  color: #fff;
+  background: var(--sidebar-bg) !important;
+  color: var(--sidebar-text);
   transition: all 0.3s;
   padding: 0 0.5rem;
   position: fixed;
@@ -152,7 +152,7 @@ span {
 #sidebar .sidebar-header {
   padding: 15px 16px;
   text-align: center;
-  background: white !important;
+  background: var(--sidebar-bg) !important;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -170,13 +170,6 @@ span {
 }
 #sidebar ul li > a {
   display: block;
-  border: 1px solid black !important;
-  height: 34 px !important;
-}
-
-#sidebar ul li > a:hover {
-  background-color: #f4f4f4;
-  border: 1px solid black !important;
 }
 
 #sidebar ul li a i {
