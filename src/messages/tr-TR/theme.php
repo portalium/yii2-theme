@@ -18,6 +18,7 @@ return [
     'Contents' => 'İçerikler',
     'Preferences' => 'Tercihler',
     'Page Size' => 'Sayfa Boyutu',
+    'Rows Per Page' => 'Sayfa Başına Satır',
     'Theme' => 'Tema',
     'Default Page Size' => 'Varsayılan Sayfa Boyutu',
     'Main Menu' => 'Ana Menü',
