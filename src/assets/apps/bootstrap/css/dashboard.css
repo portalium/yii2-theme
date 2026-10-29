@@ -244,6 +244,7 @@ a.article:hover {
 
 #main {
   width: 100%;
+  min-width: 0;
   min-height: 100vh;
   transition: all 0.3s;
   margin-left: 250px;
@@ -440,5 +441,26 @@ a.article:hover {
 
   .dropdown.nav-item {
     width: 100%;
+  }
+}
+
+/* Phones: page title in the page palette instead of a dark strip, tighter gutters */
+@media (max-width: 767px) {
+  .title-mobile.bg-dark {
+    justify-content: flex-start;
+    height: auto;
+    padding: 10px 16px;
+    border-top: 1px solid var(--menu-border);
+    border-bottom: 1px solid var(--menu-border);
+    background: var(--menu-bg) !important;
+    color: var(--menu-text);
+  }
+
+  .content {
+    padding: 12px;
+  }
+
+  .bread {
+    margin: 0 0 12px;
   }
 }

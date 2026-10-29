@@ -337,9 +337,9 @@
   border-bottom-color: #ebccd1;
 }
 
-/* GridView / ListView footer (summary, page sizer, pager) on narrow screens:
+/* GridView / ListView footer (summary, page sizer, pager) below 992px:
    one row each, the pager scrolls sideways instead of being cut off */
-@media (max-width: 767.98px) {
+@media (max-width: 991.98px) {
   .panel-footer.d-flex {
     flex-wrap: wrap;
     row-gap: 10px;

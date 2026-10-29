@@ -61,11 +61,8 @@
 #sidebar {
   --sidebar-bg: var(--menu-bg);
   --sidebar-text: var(--menu-text);
-  --sidebar-muted: var(--menu-muted);
   --sidebar-hover: var(--menu-hover);
   --sidebar-active-bg: var(--menu-active-bg);
-  --sidebar-active-text: var(--menu-active-text);
-  --sidebar-child-active-bg: var(--menu-active-bg);
   --sidebar-line: var(--menu-line);
   --sidebar-radius: var(--menu-radius);
   display: flex;
@@ -82,26 +79,21 @@
 
 #sidebar .nav-pills {
   padding: 0 6px;
-  gap: 2px;
+  gap: 6px;
 }
 
 #sidebar .nav-item {
   margin: 0 !important;
 }
 
+/* items carry btn btn-success: border, background and colours come from the theme's buttons */
 #sidebar .nav-link {
   display: flex;
   align-items: center;
-  gap: 12px;
+  justify-content: flex-start;
+  gap: 8px;
   width: 100%;
-  min-height: 42px;
-  padding: 9px 14px;
-  border: 0;
-  border-radius: var(--sidebar-radius);
-  background: transparent;
-  color: var(--sidebar-text) !important;
-  font-size: 15px;
-  line-height: 1.2;
+  padding: var(--bs-btn-padding-y) var(--bs-btn-padding-x);
   text-align: left;
   transition: background-color .15s ease, color .15s ease;
 }
@@ -111,7 +103,6 @@
   min-width: 20px !important;
   margin: 0 !important;
   text-align: center;
-  font-size: 16px;
   color: inherit !important;
 }
 
@@ -122,26 +113,13 @@
   white-space: nowrap;
 }
 
-#sidebar .nav-link:hover,
-#sidebar .nav-link:focus-visible {
-  background: var(--sidebar-hover) !important;
-  color: var(--sidebar-text) !important;
-}
-
 #sidebar .nav-link.active,
 #sidebar .nav-link.active:hover {
   background: var(--sidebar-active-bg) !important;
-  color: var(--sidebar-active-text) !important;
-  font-weight: 600;
 }
 
 #sidebar .nav-link.active > i {
   color: inherit !important;
-}
-
-/* open category: no fill, the "−" shows it is open */
-#sidebar .submenu-toggle[aria-expanded="true"] {
-  font-weight: 600;
 }
 
 /* category: label link + open/close button */
@@ -150,30 +128,31 @@
 }
 
 #sidebar .submenu-link {
-  padding-right: 44px;
+  padding-right: 36px !important;
 }
 
 #sidebar .submenu-link.active-parent {
   background: var(--sidebar-hover) !important;
 }
 
+/* sits inside the label button's border (button height: 13px x 1.5 + padding + border = 31.25px) */
 #sidebar .submenu-toggle-button {
   position: absolute;
-  top: 4px;
-  right: 6px;
-  width: 34px;
-  height: 34px;
+  top: 2px;
+  right: 3px;
+  width: 28px;
+  height: 27px;
   border: 0;
   border-radius: var(--sidebar-radius);
   background: transparent;
-  color: var(--sidebar-muted);
+  color: inherit;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 #sidebar .submenu-toggle-button:hover {
-  background: var(--sidebar-hover);
+  background: var(--sidebar-active-bg);
 }
 
 #sidebar .submenu-indicator {
@@ -215,9 +194,9 @@
 #sidebar .submenu {
   position: relative;
   flex-wrap: nowrap;
-  gap: 2px;
-  margin: 4px 0 6px 25px;
-  padding: 2px 0 2px 14px;
+  gap: 6px;
+  margin: 6px 0 0 25px;
+  padding: 0 0 0 14px;
 }
 
 #sidebar .submenu::before {
@@ -232,27 +211,13 @@
 
 #sidebar .submenu .nav-link,
 #sidebar ul ul a {
-  min-height: 38px;
-  padding: 8px 12px !important;
   width: 100% !important;
-  font-size: 14px;
-  color: var(--sidebar-muted) !important;
-}
-
-#sidebar .submenu .nav-link:hover {
-  color: var(--sidebar-text) !important;
-}
-
-#sidebar .submenu .nav-link.active,
-#sidebar .submenu .nav-link.active:hover {
-  background: var(--sidebar-child-active-bg) !important;
-  color: var(--sidebar-active-text) !important;
 }
 
 /* collapsed sidebar: icons only */
 #sidebar.active .nav-link {
   justify-content: center;
-  padding: 10px 0 !important;
+  padding: var(--bs-btn-padding-y) 0 !important;
 }
 
 #sidebar.active .nav-link > i {
@@ -265,7 +230,7 @@
 }
 
 #sidebar.active .submenu {
-  margin: 2px 0;
+  margin: 6px 0 0;
   padding: 0;
 }
 
@@ -285,7 +250,7 @@
 
   #sidebar .nav-link {
     justify-content: center;
-    padding: 10px 0 !important;
+    padding: var(--bs-btn-padding-y) 0 !important;
   }
 
   #sidebar .submenu-indicator,
@@ -294,7 +259,7 @@
   }
 
   #sidebar .submenu {
-    margin: 2px 0;
+    margin: 6px 0 0;
     padding: 0;
   }
 

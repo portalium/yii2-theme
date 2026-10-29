@@ -24,14 +24,11 @@
   border-radius: var(--menu-radius);
   background: transparent;
   color: var(--menu-text) !important;
-  font-size: 15px;
-  line-height: 1.2;
   transition: background-color .15s ease;
 }
 
 #navbar .nav-link > i {
   min-width: 0 !important;
-  font-size: 16px;
   color: inherit !important;
 }
 
@@ -45,7 +42,6 @@
 #navbar .nav-link.active {
   background: var(--menu-active-bg) !important;
   color: var(--menu-active-text) !important;
-  font-weight: 600;
 }
 
 /* profile button: caret next to the avatar, not under it */
@@ -76,7 +72,6 @@
   border-radius: 6px;
   background: transparent;
   color: var(--menu-text) !important;
-  font-size: 14.5px;
   white-space: nowrap;
 }
 
@@ -89,7 +84,6 @@
 #navbar .dropdown-menu .dropdown-item:active {
   background: var(--menu-active-bg) !important;
   color: var(--menu-active-text) !important;
-  font-weight: 600;
 }
 
 #navbar .dropdown-divider {
@@ -161,5 +155,64 @@
 
   .dropdown-menu .dropdown > .dropdown-item.dropdown-toggle::after {
     transform: translateY(-50%);
+  }
+}
+
+/* Phone and tablet header: the collapsed top menu is one row of items whose
+   dropdowns open below the row, over the page */
+@media (max-width: 991.98px) {
+  #navbar [data-bs-target="#navbarSupportedContent"] i {
+    color: var(--menu-text);
+  }
+
+  #navbarSupportedContent {
+    flex-basis: 100%;
+  }
+
+  #navbarSupportedContent.show,
+  #navbarSupportedContent.collapsing {
+    margin-top: 6px;
+    border-top: 1px solid var(--menu-border);
+  }
+
+  #navbarSupportedContent > .navbar-nav {
+    position: relative;
+    margin-top: 0;
+    padding: 6px 0;
+  }
+
+  #navbarSupportedContent > .navbar-nav > .nav {
+    flex-direction: row !important;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 2px;
+  }
+
+  #navbarSupportedContent .nav-item,
+  #navbarSupportedContent .nav > .nav,
+  #navbarSupportedContent .nav > .dropdown {
+    width: auto !important;
+    position: static;
+  }
+
+  /* badges (notification count) stay on their own toggle */
+  #navbarSupportedContent .nav-item > .dropdown-toggle {
+    position: relative;
+  }
+
+  #navbarSupportedContent .nav-item > .dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    max-height: 60vh;
+    margin-top: 0;
+    overflow-y: auto;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    z-index: 1050;
+  }
+
+  #navbarSupportedContent .profile .profile-name {
+    display: none;
   }
 }
