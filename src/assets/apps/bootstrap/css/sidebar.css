@@ -77,6 +77,17 @@
   margin: 0;
 }
 
+/* the menu still scrolls (wheel, touch), the scrollbar is hidden */
+#sidebar,
+#sidebar ul.components {
+  scrollbar-width: none;
+}
+
+#sidebar::-webkit-scrollbar,
+#sidebar ul.components::-webkit-scrollbar {
+  display: none;
+}
+
 #sidebar .nav-pills {
   padding: 0 6px;
   gap: 6px;
@@ -214,10 +225,17 @@
   width: 100% !important;
 }
 
-/* collapsed sidebar: icons only */
+/* collapsed sidebar: icons only, square buttons as tall as a normal button */
+#sidebar .nav-link {
+  --sidebar-icon-button: calc(var(--bs-btn-font-size) * var(--bs-btn-line-height) + 2 * var(--bs-btn-padding-y) + 2 * var(--bs-btn-border-width));
+}
+
 #sidebar.active .nav-link {
   justify-content: center;
-  padding: var(--bs-btn-padding-y) 0 !important;
+  width: var(--sidebar-icon-button) !important;
+  height: var(--sidebar-icon-button);
+  margin: 0 auto;
+  padding: 0 !important;
 }
 
 #sidebar.active .nav-link > i {
@@ -250,7 +268,10 @@
 
   #sidebar .nav-link {
     justify-content: center;
-    padding: var(--bs-btn-padding-y) 0 !important;
+    width: var(--sidebar-icon-button) !important;
+    height: var(--sidebar-icon-button);
+    margin: 0 auto;
+    padding: 0 !important;
   }
 
   #sidebar .submenu-indicator,
